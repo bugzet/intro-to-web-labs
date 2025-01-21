@@ -1,5 +1,3 @@
-from math import radians
-
 name = "Clara"
 print("Name:", name)
 
