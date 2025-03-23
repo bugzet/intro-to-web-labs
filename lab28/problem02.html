@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 100px;
+            color: white;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+
+        .static {
+            position: static;
+            background-color: lightblue;
+        }
+
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: lightgreen;
+        }
+
+        .absolute-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin-top: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: orange;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: red;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h2>Static Position</h2>
+    <div class="box static">Static</div>
+
+    <h2>Relative Position</h2>
+    <div class="box relative">Relative</div>
+
+    <h2>Absolute Position (inside container)</h2>
+    <div class="absolute-container">
+        <div class="box absolute">Absolute</div>
+    </div>
+
+    <h2>Fixed Position</h2>
+    <div class="box fixed">Fixed</div>
+
+    <h2>Sticky Position</h2>
+    <div class="box sticky">Sticky</div>
+
+    <p style="height: 1000px;">Scroll down to test fixed and sticky positioning.</p>
+</body>
+</html>
