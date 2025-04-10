@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab 1: Changing Text</title>
+</head>
+<body>
+      <p id="message">This is the original text</p>
+      <button onclick="changeText()">Change Text</button>
+      <script>
+          function changeText() {
+              let element = document.getElementById("message");
+              element.innerText = "The text has been changed!";
+          }
+      </script>
+</body>
+</html>
