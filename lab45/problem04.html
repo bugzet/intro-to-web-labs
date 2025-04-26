@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Users</title>
+</head>
+<body>
+<h2>Search Users</h2>
+<input type="text" id="search" placeholder="Search by name...">
+<ul id="userList"></ul>
+
+<script>
+    let allUsers = [];
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(users => {
+            allUsers = users;
+            displayUsers(users);
+        });
+
+    function displayUsers(users) {
+        let userList = document.getElementById('userList');
+        userList.innerHTML = '';
+        users.forEach(user => {
+            let li = document.createElement('li');
+            li.textContent = user.name;
+            userList.appendChild(li);
+        });
+    }
+
+    document.getElementById('search').addEventListener('input', function() {
+        let query = this.value.toLowerCase();
+        let filtered = allUsers.filter(user => user.name.toLowerCase().includes(query));
+        displayUsers(filtered);
+    });
+</script>
+</body>
+</html>
